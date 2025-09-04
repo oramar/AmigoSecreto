@@ -59,5 +59,17 @@ const agregarAmigo = () => {
   actualizarBotones();
 };
 
+// Sortea y muestra un amigo secreto.
+const sortearAmigo = () => {
+
+  // Deshabilitar el botón de sortear una vez que se ha realizado el sorteo.
+  referenciaElementos.btnSortear.disabled = true;
+
+  const indice = Math.floor(Math.random() * amigos.length);
+  const amigoSecreto = amigos[indice];
+
+  referenciaElementos.resultado.innerHTML = `<li>¡El amigo secreto es: ${amigoSecreto}!</li>`;
+};
+
 // Al cargar la página, establecemos el estado inicial de los botones.
 window.onload = actualizarBotones;
