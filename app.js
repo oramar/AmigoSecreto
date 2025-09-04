@@ -25,11 +25,10 @@ const actualizarBotones = () => {
   referenciaElementos.btnReiniciar.disabled = amigos.length === 0;
 };
 
-//Creamo una Función de inicialización
-const inicializar = () => {
-  // Llamamos a actualizarBotones para establecer el estado inicial de los botones.
-  actualizarBotones();
+// Actualiza la lista de amigos en el DOM.
+const actualizarListaDOM = () => {
+  dom.listaAmigos.innerHTML = amigos.map((amigo) => `<li>${amigo}</li>`).join("");
 };
 
-// Al cargar la página, inicializamos la aplicación.
+// Al cargar la página, establecemos el estado inicial de los botones.
 window.onload = actualizarBotones;
