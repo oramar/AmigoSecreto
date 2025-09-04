@@ -27,7 +27,36 @@ const actualizarBotones = () => {
 
 // Actualiza la lista de amigos en el DOM.
 const actualizarListaDOM = () => {
-  dom.listaAmigos.innerHTML = amigos.map((amigo) => `<li>${amigo}</li>`).join("");
+  referenciaElementos.listaAmigos.innerHTML = amigos.map((amigo) => `<li>${amigo}</li>`).join("");
+};
+
+// Agrega un amigo a la lista.
+const agregarAmigo = () => {
+  const nombre = referenciaElementos.inputAmigo.value.trim();
+
+  // 1. Validar que no esté vacío.
+  if (!nombre) {
+    mostrarMensaje("Por favor, escribe un nombre antes de añadir.");
+    referenciaElementos.inputAmigo.focus();
+    return;
+  }
+
+  // 2. Validar que no esté repetido (case-insensitive).
+  if (amigos.some((amigo) => amigo.toLowerCase() === nombre.toLowerCase())) {
+    mostrarMensaje(`El nombre "${nombre}" ya fue agregado.`);
+    referenciaElementos.inputAmigo.value = "";
+    referenciaElementos.inputAmigo.focus();
+    return;
+  }
+
+  // 3. Si pasa las validaciones, lo agregamos y actualizamos la vista.
+  amigos.push(nombre);
+  actualizarListaDOM();
+  referenciaElementos.inputAmigo.value = "";
+  referenciaElementos.inputAmigo.focus();
+
+  // Actualizamos el estado de los botones después de agregar un amigo.
+  actualizarBotones();
 };
 
 // Al cargar la página, establecemos el estado inicial de los botones.
