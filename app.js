@@ -71,5 +71,16 @@ const sortearAmigo = () => {
   referenciaElementos.resultado.innerHTML = `<li>¡El amigo secreto es: ${amigoSecreto}!</li>`;
 };
 
+// Restablece la aplicación a su estado inicial.
+const reiniciar = () => {
+  amigos = [];
+  referenciaElementos.listaAmigos.innerHTML = "";
+  referenciaElementos.resultado.innerHTML = "";
+  referenciaElementos.inputAmigo.value = "";
+  
+  // Actualizamos el estado de los botones al reiniciar.
+  actualizarBotones();
+};
+
 // Al cargar la página, establecemos el estado inicial de los botones.
 window.onload = actualizarBotones;
