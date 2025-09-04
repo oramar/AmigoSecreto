@@ -22,6 +22,7 @@
             <div class="input-wrapper">
                 <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
                 <button class="button-add" onclick="agregarAmigo()">Añadir</button>
+                
             </div>
            
             <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
@@ -32,10 +33,14 @@
                     <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
                     Sortear amigo
                 </button>
+                    <button class="button-draw" onclick="reiniciar()" aria-label="Reiniciar juegoo">
+                    <img src="assets/reiniciar.png" alt="Ícono para reiniciar juego">
+                    Volver a iniciar
+                </button>
             </div>
         </section>
     </main>
 
-    <script src="app.js" defer></script>
+    <script src="app2.js" defer></script>
 </body>
 </html>

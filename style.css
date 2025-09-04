@@ -88,8 +88,10 @@ body {
 }
 
 .button-container {
-    width: 300px;
+    width: 600px;
+    display: flex;
     justify-content: center;
+    gap: 1rem;
 }
 
 /* Estilos de entrada de texto */
@@ -159,4 +161,13 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+
+/* Estilo para los botones cuando están deshabilitados */
+.button-draw:disabled {
+  background-color: var(--color-tertiary); /* Gris claro */
+  cursor: not-allowed; /* Cambia el cursor para indicar que no es interactivo */
+  opacity: 0.6; /* Hace el botón ligeramente transparente */
+  color: var(--color-text); /* Cambia el color del texto a gris oscuro */
 }
